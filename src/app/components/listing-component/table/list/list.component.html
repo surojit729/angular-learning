@@ -1,0 +1,32 @@
+<table>
+    <thead>
+        <tr>
+            <th>Brand</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Rating</th>
+            <th>Width</th>
+            <th>Height</th>
+            <th>Review</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let prod of productList">
+            <td>{{prod.title}}</td>
+            <td>{{prod.price}}</td>
+            <td>{{prod.category}}</td>
+            <td>{{prod.rating}}</td>
+            <td>{{prod.dimensions.width}}</td>
+            <td>{{prod.dimensions.height}}</td>
+            <td>
+                <div *ngFor="let review of prod.reviews">
+                    <p>{{review.comment}}</p>
+                </div>
+            </td>
+            <td>
+                <button (click)="viewDetails(prod);">View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
